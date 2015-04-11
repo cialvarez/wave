@@ -1,0 +1,23 @@
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Company Name</th>
+  </tr>
+
+<tr>
+  <td><%= member.name %></td>
+  <td><%= member.age %></td>
+  <td><%= member.company %></td>
+  <td><%= link_to 'Show', member_path(member), class: 'button tiny radius' %></td>
+  <td><%= link_to 'Edit', edit_member_path(member), class: 'button tiny radius' %></td>
+  <td><%= link_to 'Destroy', member_path(member), class: 'button tiny radius alert',
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
+</tr>
+
+<% from_recruit_form ||= nil %>
+<% unless from_recruit_form %>
+  <p><%= link_to 'Add Recruit', new_member_path(member.id) %></p>
+<% end %>

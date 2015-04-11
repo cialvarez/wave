@@ -1,0 +1,78 @@
+<%= form_for(@member) do |f| %>
+
+<%= f.hidden_field :parent_id %>
+
+<div class="row">
+    <div class="small-10">
+        <div class="row">
+            <div class="small-2 columns">
+              <%= f.label :name %>
+            </div>
+            <div class="small-10 columns">
+              <%= f.text_field :name %>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-10">
+        <div class="row">
+            <div class="small-2 columns">
+              <%= f.label :age %>
+            </div>
+            <div class="small-10 columns">
+              <% age_array = (18..150).to_a  %>
+              <%= select(:member, :age, age_array.each_with_index.map {|name, index| [name,index]}) %>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-10">
+        <div class="row">
+            <div class="small-2 columns">
+              <%= f.label :company %>
+            </div>
+            <div class="small-10 columns">
+              <%= f.text_field :company %>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-10">
+        <div class="row">
+            <div class="small-2 columns">
+              <%= f.label :money %>
+            </div>
+            <div class="small-10 columns">
+              <%= f.text_field :money %>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-10">
+       <div class="row">
+          <div class="small-10 small-offset-2 columns">
+            <%= f.submit 'Submit', :class => 'button radius success small' %>
+
+          </div>
+      </div>
+    </div>
+
+
+      <div class="small-10">
+          <div class="row">
+            <div class="small-10 small-offset-2 columns">
+              <%= link_to 'Cancel', members_path, class: 'button radius small' %>
+            </div>
+          </div>
+      </div>
+
+
+</div>
+
+
+
+
+
+
+
+<% end %>

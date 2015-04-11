@@ -1,0 +1,10 @@
+<dl class="tabs" data-tab data-options="deep_linking: true">
+  <dd class="active">
+    <%= link_to 'Members', members_path %>
+  </dd>
+  <dd>
+    <%= link_to 'Sign Up', new_member_path %>
+  </dd>
+</dl>
+
+<%= members_tree_for @members %>

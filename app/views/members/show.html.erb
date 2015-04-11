@@ -1,0 +1,26 @@
+
+Profile
+<p>
+  <strong>Name:</strong>
+  <%= @member.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @member.age %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @member.company %>
+</p>
+
+<p>
+  <strong>Money:</strong>
+  <%= @member.money %>
+</p>
+
+Recruits:
+<%= link_to 'Back', members_path, class: 'button radius small' %>
+
+<%= link_to 'Edit', edit_member_path(@member), class: 'button radius small' %>

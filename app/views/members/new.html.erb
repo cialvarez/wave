@@ -1,0 +1,14 @@
+<dl class="tabs" data-tab data-options="deep_linking: true">
+  <dd>
+    <%= link_to 'Recruits', members_path %>
+  </dd>
+  <dd class="active">
+    <%= link_to 'Add', new_member_path %>
+  </dd>
+</dl>
+
+<%= render 'form' %>
+
+<% if @member.parent %>
+  <%= render 'member', member: @member.parent, from_recruit_form: true %>
+<% end %>
